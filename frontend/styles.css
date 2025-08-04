@@ -1,0 +1,329 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&display=swap');
+
+/* Balanced, attractive color scheme */
+:root {
+    --bg-primary: #f8fafc;
+    --bg-secondary: #ffffff;
+    --bg-tertiary: #f1f5f9;
+    --bg-accent: #e2e8f0;
+    --bg-hover: #f8fafc;
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --text-tertiary: #64748b;
+    --text-muted: #94a3b8;
+    --border-light: #e2e8f0;
+    --border-medium: #cbd5e1;
+    --border-dark: #94a3b8;
+    --accent-primary: #3b82f6;
+    --accent-primary-hover: #2563eb;
+    --accent-secondary: #10b981;
+    --accent-warning: #f59e0b;
+    --accent-error: #ef4444;
+    --accent-soft: #dbeafe;
+    --shadow-light: 0 1px 3px rgba(15, 23, 42, 0.06);
+    --shadow-medium: 0 4px 12px rgba(15, 23, 42, 0.08);
+    --shadow-heavy: 0 8px 25px rgba(15, 23, 42, 0.12);
+    --gradient-subtle: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%);
+}
+
+/* Global styles */
+html, body, [class*="css"] {
+    font-family: 'Geist', sans-serif;
+    background-color: var(--bg-primary) !important;
+    color: var(--text-primary) !important;
+}
+
+/* Hide Streamlit branding */
+#MainMenu {visibility: hidden;}
+footer {visibility: hidden;}
+header {visibility: hidden;}
+
+/* Main container */
+.stApp {
+    background-color: var(--bg-primary);
+    min-height: 100vh;
+}
+
+/* Headers */
+.main-header {
+    font-family: 'Geist', sans-serif;
+    font-weight: 700;
+    font-size: 3.5rem;
+    text-align: center;
+    color: var(--text-primary);
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.025em;
+}
+
+.sub-header {
+    font-family: 'Geist', sans-serif;
+    font-weight: 400;
+    font-size: 1.2rem;
+    text-align: center;
+    color: var(--text-secondary);
+    margin-bottom: 3rem;
+    line-height: 1.6;
+}
+
+/* Setup container */
+.setup-container {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-light);
+    padding: 2.5rem;
+    border-radius: 16px;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow-medium);
+}
+
+.setup-header {
+    font-family: 'Geist', sans-serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+    letter-spacing: -0.01em;
+}
+
+/* Status indicators */
+.status-good {
+    background: var(--accent-secondary);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    text-align: center;
+    font-weight: 500;
+    margin: 1.5rem 0;
+    box-shadow: var(--shadow-medium);
+    font-size: 1rem;
+}
+
+.status-warning {
+    background: var(--accent-warning);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    text-align: center;
+    font-weight: 500;
+    margin: 1.5rem 0;
+    box-shadow: var(--shadow-medium);
+    font-size: 1rem;
+}
+
+/* Chat container */
+.chat-container {
+    max-height: 500px;
+    overflow-y: auto;
+    padding: 1.5rem;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-light);
+    border-radius: 16px;
+    margin: 1.5rem 0;
+    box-shadow: var(--shadow-medium);
+}
+
+.chat-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.chat-container::-webkit-scrollbar-track {
+    background: var(--bg-tertiary);
+    border-radius: 3px;
+}
+
+.chat-container::-webkit-scrollbar-thumb {
+    background: var(--border-medium);
+    border-radius: 3px;
+}
+
+.chat-container::-webkit-scrollbar-thumb:hover {
+    background: var(--border-dark);
+}
+
+/* Message bubbles */
+.user-message {
+    background: var(--accent-primary);
+    color: white;
+    padding: 1rem 1.25rem;
+    border-radius: 20px 20px 6px 20px;
+    margin: 1rem 0;
+    margin-left: 15%;
+    font-weight: 400;
+    box-shadow: var(--shadow-medium);
+    line-height: 1.5;
+}
+
+.bot-message {
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+    padding: 1rem 1.25rem;
+    border-radius: 20px 20px 20px 6px;
+    margin: 1rem 0;
+    margin-right: 15%;
+    border: 1px solid var(--border-light);
+    font-weight: 400;
+    box-shadow: var(--shadow-light);
+    line-height: 1.5;
+}
+
+/* Empty chat state */
+.empty-chat {
+    text-align: center;
+    color: var(--text-muted);
+    padding: 3rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+
+/* Streamlit overrides */
+.stButton > button {
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-medium);
+    border-radius: 12px;
+    padding: 0.75rem 1.5rem;
+    font-weight: 500;
+    font-family: 'Geist', sans-serif;
+    transition: all 0.2s ease;
+    box-shadow: var(--shadow-light);
+    font-size: 0.95rem;
+}
+
+.stButton > button:hover {
+    background: var(--bg-hover);
+    border-color: var(--border-dark);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-medium);
+}
+
+.stButton > button[kind="primary"] {
+    background: var(--accent-primary);
+    color: white;
+    border: none;
+    box-shadow: var(--shadow-medium);
+}
+
+.stButton > button[kind="primary"]:hover {
+    background: var(--accent-primary-hover);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-heavy);
+}
+
+/* Text inputs */
+.stTextInput > div > div > input,
+.stTextArea > div > div > textarea {
+    background-color: var(--bg-secondary) !important;
+    border: 1px solid var(--border-light) !important;
+    border-radius: 12px !important;
+    color: var(--text-primary) !important;
+    font-family: 'Geist', sans-serif !important;
+    padding: 0.75rem 1rem !important;
+    font-size: 0.95rem !important;
+}
+
+.stTextInput > div > div > input:focus,
+.stTextArea > div > div > textarea:focus {
+    border-color: var(--accent-primary) !important;
+    box-shadow: 0 0 0 2px rgba(26, 115, 232, 0.1) !important;
+}
+
+.stTextInput > div > div > input::placeholder,
+.stTextArea > div > div > textarea::placeholder {
+    color: var(--text-tertiary) !important;
+}
+
+/* Radio buttons */
+.stRadio > div {
+    background: var(--bg-secondary);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-light);
+    box-shadow: var(--shadow-light);
+}
+
+.stRadio > div > label {
+    color: var(--text-primary) !important;
+    font-weight: 500 !important;
+}
+
+/* Chat input */
+.stChatInput > div > div > input {
+    background-color: var(--bg-secondary) !important;
+    border: 1px solid var(--border-medium) !important;
+    color: var(--text-primary) !important;
+    border-radius: 24px !important;
+    padding: 0.75rem 1.25rem !important;
+    font-size: 1rem !important;
+}
+
+.stChatInput > div > div > input:focus {
+    border-color: var(--accent-primary) !important;
+    box-shadow: 0 0 0 2px rgba(26, 115, 232, 0.1) !important;
+}
+
+/* Success/Error messages */
+.stSuccess {
+    background-color: var(--accent-soft) !important;
+    border: 1px solid var(--accent-secondary) !important;
+    color: var(--accent-secondary) !important;
+    border-radius: 12px !important;
+}
+
+.stError {
+    background-color: rgba(239, 68, 68, 0.1) !important;
+    border: 1px solid var(--accent-error) !important;
+    color: var(--accent-error) !important;
+    border-radius: 12px !important;
+}
+
+.stWarning {
+    background-color: rgba(245, 158, 11, 0.1) !important;
+    border: 1px solid var(--accent-warning) !important;
+    color: var(--accent-warning) !important;
+    border-radius: 12px !important;
+}
+
+.stInfo {
+    background-color: var(--accent-soft) !important;
+    border: 1px solid var(--accent-primary) !important;
+    color: var(--accent-primary) !important;
+    border-radius: 12px !important;
+}
+
+/* Columns */
+.stColumns {
+    gap: 1rem;
+}
+
+/* Footer styling */
+.footer-text {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-top: 3rem;
+    padding: 2rem 0;
+    border-top: 1px solid var(--border-light);
+    font-weight: 400;
+}
+
+/* Section headers */
+.section-header {
+    font-family: 'Geist', sans-serif;
+    font-weight: 600;
+    font-size: 1.25rem;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    letter-spacing: -0.01em;
+}
+
+/* Divider */
+hr {
+    border: none;
+    height: 1px;
+    background: var(--border-light);
+    margin: 2rem 0;
+}
+
+/* Spinner override */
+.stSpinner > div {
+    border-color: var(--accent-primary) transparent var(--accent-primary) transparent !important;
+}
