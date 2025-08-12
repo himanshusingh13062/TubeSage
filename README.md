@@ -13,6 +13,11 @@ Chat with YouTube videos using AI
 
 TubeSage is a powerful AI-powered RAG (Retrieval-Augmented Generation) system that lets you chat with the contents of a YouTube video or custom text. It extracts transcripts, builds a vector store, and answers your questions in a conversational format — powered by Google's Gemini Pro and HuggingFace embeddings.
 
+
+![LoginPage](images/loginPage.png)
+![ChatPage](images/chatPage.png)
+
+
 ### Key Features
 - Extracts transcripts directly from YouTube videos.
 
